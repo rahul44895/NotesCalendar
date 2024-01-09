@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  overflow-x: hidden;
+  background-image: url("./images//loginBG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.containerArea {
+  min-height: calc(100vh - 56px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+.calendar {
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+.calHead {
+  background: #198754;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.cal_container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calArea {
+  /* height: 100%; */
+  width: 50%;
+  padding: 1em;
+  overflow: hidden;
+}
+.button_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.button_area span {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.button_area span:hover {
+  background: rgba(0, 0, 0, 0.116);
+}
+.cal,
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.cal {
+  width: 100%;
+  height: 80%;
+}
+.days {
+  height: calc(100% / 7);
+}
+.cal .date,
+.days .day {
+  width: calc(100% / 7);
+  /* padding: calc(2em / 7); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid orange; */
+  overflow: hidden;
+}
+.date {
+  height: calc(100% / 6);
+}
+.cal .date:hover {
+  background-color: rgba(0, 0, 0, 0.171);
+}
+.activeDate {
+  background-color: #198754;
+  border-radius: 100%;
+}
+.inactiveDate {
+  color: grey;
+}
+.notes_area {
+  border-left: 1px solid grey;
+  padding: 1em;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.notesList {
+  overflow: auto;
+  height: 80%;
+}
+.noteHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.noteHead span {
+  font-size: 2em;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+.noteHead span:hover {
+  font-size: 2em;
+  transform: rotate(45deg) scale(1.09);
+}
+
+/* login page */
+.containerLogin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 92.8vh;
+  position: relative;
+}
+
+.loginArea {
+  height: 100%;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 1em;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgb(0 0 0 / 49%), transparent);
+  z-index: 1;
+}
+
+.noteItemButton {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+.card:hover .noteItemButton {
+  display: flex;
+}
+@media screen and (max-width: 750px) {
+  .calArea, .notes_area{
+    width: 100%;
+  }
+  .loginArea{
+    position: static;
+    width: 100%;
+    padding: 1em;
+  }
+}
