@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  const host = process.env.REACT_APP_HOST;
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -14,7 +15,7 @@ export default function LoginPage() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:4321/api/user/login`, {
+    const res = await fetch(`${host}/api/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

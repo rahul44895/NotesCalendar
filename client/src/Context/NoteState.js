@@ -3,6 +3,7 @@ import NoteContext from "../Context/NoteContext";
 const NoteState = (props) => {
   const [notes, setNotes] = useState([]);
   const host = process.env.REACT_APP_HOST;
+  
   const getNotes = async (date) => {
     const res = await fetch(`${host}/api/note/fetchNotes/${date}`, {
       method: "POST",
